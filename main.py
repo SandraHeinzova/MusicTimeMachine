@@ -64,7 +64,7 @@ complete_list_songs = [name.replace("\t", "").replace("\n", "") for name in list
 # MAKING NEW SPOTIFY PLAYLIST
 
 authorization = spotipy.oauth2.SpotifyOAuth(client_id=CLIENT_ID_SPOTIFY, client_secret=CLIENT_SECRET_SPOTIFY,
-                                            redirect_uri="http://example.com/", scope="playlist-modify-private")
+                                            redirect_uri="your redirect uri from app", scope="playlist-modify-private")
 
 get_token = authorization.get_access_token(as_dict=False)
 
