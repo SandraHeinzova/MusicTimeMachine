@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center flex-container mt-5">
+    <h1 class="text-center text-h1 pb-3">MusicTimeMachine</h1>
+</div>
+<div class="row justify-content-center flex-container mt-5">
+    <h1 class="text-center text-user-name pb-3">Hello <span class="user-name">{{ user_name }}</span>!</h1>
+</div>
+<div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+    <form id="playlistForm" class="form-container" action="/creating" method="POST"
+          style="text-align: left; width: 500px;">
+        <label for="date_entry" class="text-label-date mt-4 mb-3">
+            To which date would you like to travel?
+            <button type="button" class="help-button btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal">
+                ?
+            </button>
+        </label>
+        <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">Help</h5>
+                    </div>
+                    <div class="modal-body">
+                        Possible date range from 04.08.1958 to the current date.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="text" name="date" class="form-control mt-3 mb-3" id="date_entry"
+               pattern="\d{4}-\d{2}-\d{2}" placeholder="YYYY-MM-DD" required style="width: 200px">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="flash">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+        <button type="submit" class="btn btn-lg create-button" id="createPlaylistBtn">Create Playlist</button>
+    </form>
+</div>
+<div class="loading" style="display: none;">
+    <h2 class="loading_name">Creating your playlist...</h2>
+    <div class="dots-container">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('createPlaylistBtn').addEventListener('click', function(event) {
+            var flashMessages = document.querySelector('.flash');
+            if (flashMessages) {
+                flashMessages.innerHTML = ''; // Clear the content
+            }
+            // Prevent the form from submitting and the page from refreshing
+            event.preventDefault();
+            // Display the spinner
+            document.querySelector('.loading').style.display = 'flex';
+
+            // Submit the form
+            document.getElementById('playlistForm').submit();
+        });
+    });
+</script>
+
+{% endblock %}

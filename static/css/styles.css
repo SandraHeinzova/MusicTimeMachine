@@ -1,0 +1,201 @@
+.text-h1 {
+    color: rgb(178,58,238);
+    font-size: 50px;
+}
+
+.text-h2 {
+    color: rgb(255, 187, 255);
+    font-size: 25px;
+    margin-left: 5px;
+}
+
+.text-user-name {
+    color: rgb(178,58,238);
+    font-size: 43px;
+}
+
+.user-name {
+    text-decoration: underline;
+}
+
+.text-label {
+    color: rgb(178,58,238);
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+.text-label-date {
+    color: rgb(255, 187, 255);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.create-button {
+    background-color: #9f54fb !important;
+    border-color: #9f54fb !important;
+    color: white !important;
+    width: 200px;
+}
+
+.back-button {
+    background-color: #9f54fb !important;
+    border-color: #9f54fb !important;
+    color: white !important;
+    width: 150px;
+}
+
+.login-button {
+    width: 165px;
+    height: (478/4)px;
+    padding: 10px 20px;
+    background-color: black !important;
+    border-color: black !important;
+    color: #9f54fb !important;
+    border-radius: 0;
+}
+
+.button-image {
+    width: 130px;
+    height: (478/4)px;
+    margin-right: 10px;
+}
+
+.help-button {
+    background-color: rgb(33, 37, 41) !important;
+    border-color: rgb(33, 37, 41) !important;
+    color: rgb(255, 187, 255) !important;
+    width: 35px;
+}
+
+.help-button:hover, .help-button:focus, .help-button:active, .help-button.active {
+    color: rgb(178,58,238) !important;
+}
+
+.create-button:hover, .create-button:focus, .create-button:active, .create-button.active {
+    background-color: #bb86fc !important;
+    border-color: #bb86fc !important;
+}
+
+.back-button:hover, .back-button:focus, .back-button:active, .back-button.active {
+    background-color: #bb86fc !important;
+    border-color: #bb86fc !important;
+}
+
+.login-button:hover, .login-button:focus, .login-button:active, .login-button.active {
+    font-weight: bold;
+}
+
+.modal {
+    --bs-modal-header-border-width: 0px !important;
+    --bs-modal-footer-border-width: 0px !important;
+}
+
+.modal-header, .modal-body, .modal-footer {
+    background-color: rgb(33, 37, 41) !important;
+
+}
+
+.center {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dark-mode {
+ background-color: rgb(33, 37, 41) !important;
+}
+
+.btn-close, .btn-secondary {
+  background-color: #9f54fb !important;
+  border-color: #9f54fb !important;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 10px;
+}
+
+a {
+  color: rgb(255, 187, 255) !important;
+}
+
+.flash {
+  color: rgb(255, 187, 255) !important;
+}
+
+.move {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/*
+ * Loading spinner CSS styles,
+ * pushing pixels, autor: dave from CodePen (sliderrevolition.com)
+ */
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  height: 200px;
+}
+
+.loading_name {
+  color: #ccc;
+  margin: 0;
+  font: .9em verdana;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+.dot {
+  display: inline-block;
+  vertical-align: middle;
+  width: .6em;
+  height: .6em;
+  margin: .19em;
+  background: #e0b0f8;
+  border-radius: .6em;
+  animation: loading 1s infinite alternate;
+}
+
+.dot:nth-of-type(2) {
+  background: #d89cf6;
+  animation-delay: 0.2s;
+}
+.dot:nth-of-type(3) {
+  background: #d088f4;
+  animation-delay: 0.4s;
+}
+.dot:nth-of-type(4) {
+  background: #c975f3;
+  animation-delay: 0.6s;
+}
+.dot:nth-of-type(5) {
+  background: #c161f1;
+  animation-delay: 0.8s;
+}
+.dot:nth-of-type(6) {
+  background: #b94def;
+  animation-delay: 1.0s;
+}
+.dot:nth-of-type(7) {
+  background: #b23aee;
+  animation-delay: 1.2s;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

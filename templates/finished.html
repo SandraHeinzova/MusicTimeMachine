@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div id="result">
+    <div class="move container mt-5 pt-5">
+        <h1 class="text-center text-user_name">Your playlist was successfully created!</h1>
+        <img class="mt-5" src="static/images/correct-icon.svg" width="100px" alt="check mark">
+        <a href="{{ url_for('home')}}" class="btn btn-sm back-button mt-5">Back to Start</a>    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center flex-container mt-5">
+    <h1 class="text-center text-h1 pb-3"><small>Welcome to</small></h1>
+    <h1 class="text-center text-h1 pb-3">MusicTimeMachine</h1>
+</div>
+<div style="text-align: center" class="mt-5">
+    <div style="display: inline-block; text-align: left">
+        <p class="">This project will create for you a brand-new playlist in your Spotify profile.</p>
+        <p class="">Working with the <a href="https://www.billboard.com/charts/hot-100/" target="_blank">Billboard</a> charts 'HOT 100'</p>
+        <p class="">All you need is to log in to your Spotify and choose the desired date!</p>
+        <p class="">In a few moments, you can enjoy and listen the top 100 songs of your choice.</p>
+    </div>
+</div>
+<div class="d-flex justify-content-center flex-container mt-5">
+    <a href="{{ url_for('login')}}" type="button" class="btn btn-lg login-button">
+        <img src="static/images/spotify-playlist.jpeg" alt="Log In to Spotify" class="button-image">
+        Log In to Spotify</a>
+</div>
+
+{% endblock %}
