@@ -1,5 +1,5 @@
 import base64
-from datetime import datetime
+from datetime import datetime, timedelta
 import secrets
 import string
 import hashlib
@@ -26,7 +26,7 @@ def base64encode(input_data):
 
 def validate_date(date):
     min_date_possible = datetime(1958, 8, 4).date()
-    max_date_possible = datetime.now().date()
+    max_date_possible = datetime.now().date() - timedelta(days=1)
     try:
         entered_date = datetime.strptime(date, "%Y-%m-%d").date()
     except ValueError:
