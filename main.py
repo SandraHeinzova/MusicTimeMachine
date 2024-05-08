@@ -5,6 +5,7 @@ from access_token import get_access_token
 import urllib.parse
 import requests
 import re
+import os
 
 app = Flask(__name__)
 app.secret_key = "secret_key"
@@ -17,9 +18,9 @@ TOKEN_URL = "https://accounts.spotify.com/api/token"
 
 user_id = ""
 user_name = ""
-client_id = "your_personal_client_id"
-redirect_uri = "your_personal_redirect_uri"
-client_secret = "your_personal_client_secret"
+client_id = os.environ.get("client_id")
+redirect_uri = os.environ.get("redirect_uri")
+client_secret = os.environ.get("client_secret")
 code_verifier = generate_random_string(82)
 
 
