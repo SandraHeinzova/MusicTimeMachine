@@ -55,10 +55,10 @@ def callback():
     if code:
         token_info = get_access_token(code, client_id, client_secret, redirect_uri, code_verifier, TOKEN_URL)
 
-        session["access_token"] = token_info["access_token"]
+        session['access_token'] = token_info["access_token"]
 
         headers = {
-            "Authorization": f"Bearer {session["access_token"]}"
+            "Authorization": f"Bearer {session['access_token']}"
         }
         name_req = requests.get(url=NAME_URL, headers=headers)
         user_name = name_req.json()["display_name"]
